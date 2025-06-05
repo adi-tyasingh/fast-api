@@ -20,7 +20,7 @@ chmod +x ./scripts/postgre.sh
 bash ./scripts/postgre.sh
 ```
 
-**3. Start application: **
+**3. Start application:**
 ```
 fastapi dev main.py
 ```
