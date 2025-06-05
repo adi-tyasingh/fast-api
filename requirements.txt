@@ -1,0 +1,4 @@
+fastapi[standard]
+asyncpg
+pydantic
+sqlalchemy>=2.0
