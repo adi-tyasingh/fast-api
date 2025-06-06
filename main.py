@@ -35,6 +35,10 @@ async def get_books(session: SessionDep):
 @app.get('/book/{id}')
 async def get_book(id: int, session: SessionDep):
     res = await session.get(Book, id)
+
+    if res is None:
+        raise HTTPException(status_code=404, detail='Does that book exist?')
+    
     return res
 
 
@@ -42,7 +46,7 @@ async def get_book(id: int, session: SessionDep):
 async def update_book(id:int, update: BookUpdate, session: SessionDep):
     res = await session.get(Book, id)
 
-    if not res:
+    if res is None:
         raise HTTPException(status_code=404, detail='Does that book exist?')
     
     if update.author:
@@ -59,6 +63,10 @@ async def update_book(id:int, update: BookUpdate, session: SessionDep):
 @app.delete('/book/{id}')
 async def delete_book(id: int, session: SessionDep):
     res = await session.get(Book, id)
+
+    if res is None:
+        raise HTTPException(status_code=404, detail='Does that book exist?')
+
     await session.delete(res)
     await session.commit()
     return "book deleted!"
