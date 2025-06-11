@@ -2,3 +2,6 @@ fastapi[standard]
 asyncpg
 pydantic
 sqlalchemy>=2.0
+python-dotenv
+black
+pre-commit
