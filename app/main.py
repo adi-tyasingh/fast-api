@@ -1,7 +1,8 @@
-from fastapi import FastAPI
-from db import Base, engine
 from contextlib import asynccontextmanager
+
 import views
+from db import Base, engine
+from fastapi import FastAPI
 
 
 # lifespan

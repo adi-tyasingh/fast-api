@@ -1,7 +1,9 @@
-import unittest
 import asyncio
-from app.main import app
+import unittest
+
 from httpx import AsyncClient
+
+from app.main import app
 
 
 class test_routes(unittest.TestCase):

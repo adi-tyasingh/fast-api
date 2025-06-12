@@ -1,9 +1,8 @@
+from db import Book
+from fastapi import HTTPException
+from schemas import BookCreate, BookUpdate
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
-from fastapi import HTTPException
-
-from db import Book
-from schemas import BookCreate, BookUpdate
 
 
 async def create_book(session: AsyncSession, book_data: BookCreate) -> Book:

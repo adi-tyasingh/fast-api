@@ -1,7 +1,7 @@
-from fastapi import APIRouter
-from dependencies import SessionDep
-from schemas import BookCreate, BookUpdate
 import crud
+from dependencies import SessionDep
+from fastapi import APIRouter
+from schemas import BookCreate, BookUpdate
 
 router = APIRouter()
 

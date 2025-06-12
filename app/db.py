@@ -1,10 +1,10 @@
+import os
 from typing import Optional
+
+from dotenv import load_dotenv
+from sqlalchemy import URL, String
 from sqlalchemy.ext.asyncio import AsyncAttrs, async_sessionmaker, create_async_engine
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
-from sqlalchemy import String, URL
-from dotenv import load_dotenv
-import os
-
 
 load_dotenv("../.env")
 
