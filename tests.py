@@ -1,7 +1,6 @@
 import unittest
 import asyncio
 from app.main import app
-from app.db import Book
 from httpx import AsyncClient
 
 

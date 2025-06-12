@@ -1,4 +1,5 @@
-from pydantic import BaseModel
+from typing import Optional
+from pydantic import BaseModel, Field
 
 
 class BookCreate(BaseModel):
@@ -8,6 +9,8 @@ class BookCreate(BaseModel):
 
 
 class BookUpdate(BaseModel):
-    title: str | None = None
-    author: str | None = None
-    description: str | None = None
+    title: Optional[str] = Field(None, example="Updated Title (Not mandatory)")
+    author: Optional[str] = Field(None, example="Updated Author Name (Not Mandatory)")
+    description: Optional[str] = Field(
+        None, example="Updated Description (Not Mandatory)"
+    )

@@ -10,23 +10,12 @@ load_dotenv("../.env")
 
 url_object = URL.create(
     "postgresql+asyncpg",
-
-
-
-    
     username=os.getenv("USERNAME"),
     password=os.getenv("PASSWORD"),
     host=os.getenv("HOST"),
     port=int(os.getenv("PORT")),  # Convert port to integer
     database=os.getenv("DB"),
 )
-
-# port = os.getenv("PORT")
-# db = os.getenv("DB")
-# host = os.getenv("HOST")
-
-# db_string = f"postgresql+asyncpg://admin:pass@localhost:{port}/{db}"
-
 
 engine = create_async_engine(url_object, echo=True)
 async_session = async_sessionmaker(engine, expire_on_commit=False)
